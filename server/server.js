@@ -307,6 +307,10 @@ app.post('/api/send', async (req, res) => {
     handleServerError(res, error, 'sending email');
   }
 });
+app.get('/', (req, res) =>{
+  res.send({activeStatus:true,
+            error:false, })
+})
 
 // Start Server
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
